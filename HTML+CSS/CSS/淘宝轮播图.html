@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>淘宝轮播图</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .tb-lunbo {
+        position: relative;
+        width: 1237px;
+        height: 576px;
+        background-color: deepskyblue;
+        margin: 100px auto;
+    }
+
+    .prev {
+        position: absolute;
+        top: 50%;
+        margin-top: -15px;
+        left: 0;
+        width: 46px;
+        height: 61px;
+
+    }
+
+    .next {
+        position: absolute;
+        top: 50%;
+        margin-top: -39px;
+        right: 0;
+        width: 41px;
+        height: 78px;
+
+    }
+
+    .next:hover,
+    .prev:hover {
+        box-shadow: 2px 2px 2px 0 gray;
+    }
+</style>
+
+<body>
+    <div class="tb-lunbo">
+        <img src="../../img/mi10.png" alt="">
+        <a href="#" class="prev">
+            <img src="../../img/left.png" alt="">
+        </a>
+        <a href="#" class="next">
+            <img src="../../img/right.png" alt="">
+        </a>
+    </div>
+</body>
+
+</html>

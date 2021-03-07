@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>This is a model~</title>
+    <style>
+        .text-position{
+            position:absolute;
+            bottom: 350px;
+            text-align: center;
+            width:90%;
+        }
+    </style>
+    
+</head>
+
+<body>
+    <!--主体区域-->
+    <section id="todoapp" class="text-position">
+        
+        <header class="header">
+            <h1 >WHU记事本</h1>
+            <!--输入框-->
+            <input  v-model ="inputValue" id ="text-position" 
+            @keyup.enter="add"
+            autofocus="autofocus" autocomplete="off" placeholder="请输入任务" class="new-todo" />
+        </header>
+
+        <!--列表区域-->
+        <section class="main">
+            <ul class="todo-list">
+                    <div class="view" v-for="(item,index) in list">
+                         <span class="index">
+                            {{index+1}}
+                            <label>{{item}}</label>
+                            
+                         </span>
+                         <button class="destory"  @click="remove(index)">X</button>
+                    </div>
+            </ul>
+        </section >
+        <!--统计和清空-->
+        <footer class="footer" v-if="list.length!=0">
+            <span class="todo-count">
+                <strong>{{list.length}}</strong>item left
+            </span>
+            <button class="clear" @click = "clear">clear</button>
+        </footer>
+    </section>
+        <!--底部信息-->
+        <footer class="info">
+
+        </footer>
+
+  
+      <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+ <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+    var app = new Vue({
+        el:"#todoapp",
+        data:{
+            list:["Studing","Playing","Listening"],
+            inputValue:""
+        },
+        methods:{
+            add:function(){
+                if(this.inputValue)
+                this.list.push(this.inputValue);
+            },
+            remove:function(index){
+                this.list.splice(index,1);
+            },
+            clear:function(){
+                this.list=[];
+            }
+
+        }
+    })
+    </script>
+</body>
+</html>

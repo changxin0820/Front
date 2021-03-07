@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id = "app">
+        
+        <img v-show = "isShow" src= "./img/head.jpg" alt=""><!--实际操作display><-->
+        <img v-show = "age>17 && age<19" src= "./img/1.jpg" alt="">
+        <button @click = "changeIsShow">切换</button>
+        <button @click = "addAge">看哈猪儿大图！</button>
+        <button @click = "subAge">藏起猪儿大图！</button>
+    </div>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    var app = new Vue({
+        el:"#app",
+        data:{
+            isShow:false,
+            age:17
+        },
+        methods:{
+            changeIsShow:function(){
+                
+                    this.isShow = !this.isShow;
+                
+                
+            },
+            addAge:function(){
+                if(this.age<18){
+                    this.age++;
+                this.changeIsShow();
+                }
+               
+            },
+            subAge:function(){
+                if(age = 18){
+                    this.age--;
+                this.changeIsShow();
+                }
+                
+            }
+        }
+
+    })
+</script>
+
+</body>
+</html>

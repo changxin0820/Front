@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<style>
+    .youku {
+        position: relative;
+        width: 1080px;
+        height: 540px;
+        background-color: lightgray;
+        margin: 30px auto;
+    }
+
+    .youku img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .youku:hover .mask {
+        display: block;
+    }
+
+    .mask {
+        display: none;
+        position: absolute;
+        width: 1080px;
+        height: 540px;
+        background-color: lightslategray;
+        background: rgba(0, 0, 0, .3) url(../../img/plus.png) no-repeat center;
+
+    }
+</style>
+
+<body>
+
+    <div class="youku">
+        <div class="mask"></div>
+        <img src="../../img/mi10.png" alt="">
+    </div>
+
+</body>
+
+</html>

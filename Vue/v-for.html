@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>This is a model~</title>
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <input type="button" @click="add" value="添加" >
+            <input type="button" @click="remove" value="移除" >
+            <li v-for = "(item,index) in arr">
+                {{index+1}} +"" WHU-WCX:{{item}}
+            </li>
+            <h2 v-for="item in vegetables" v-bind:title="item.name">
+                {{ item.name }}
+            </h2>
+        </ul>
+    </div>
+      <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+ <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+    var app = new Vue({
+        el:"#app",
+        data:{
+            arr:["北京","上海","深圳"],
+            vegetables:[
+                {name:"西红柿"},
+                {name:"土豆"},
+                {name:"藕"}
+            ]
+        },
+        methods:{
+            add:function(){
+                this.vegetables.push({name:"韭菜"})
+            },
+            remove:function(){
+                this.vegetables.shift({})
+            }
+        }
+    })
+    </script>
+</body>
+</html>

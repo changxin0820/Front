@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>This is a model~</title>
+</head>
+<body>
+    <div id="app">
+        <button @click = "toggleisShow" >切换显示标签！</button>
+        <p v-if="isShow">武汉大学！WCX！--v-if(直接操作元素，移除还是添加进来，用于移动较少的元素，因为性能消耗大</p>
+        <p v-show="isShow">武汉大学！WCX！--v-show(操作频繁的元素修饰，改变显示样式，性能消耗少</p>
+        <p v-if="temperature >37">太热了！</p>
+        
+        <input type="button" value="点击降温！" v-show="showtem" @click= "subtem">
+    </div>
+      <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+ <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+    var app = new Vue({
+        el:"#app",
+        data:{
+            isShow:false,
+            temperature:40,
+            showtem:true
+        },
+        methods:{
+            toggleisShow:function(){
+                
+                this.isShow = !this.isShow;
+            },
+            subtem:function(){
+                if(this.temperature>37)
+                    this.temperature--;
+                    this.showsubtembtn();
+            },
+            showsubtembtn:function(){
+                if(this.temperature<=37){
+                    this.showtem = !this.showtem;
+                }
+            }
+        }
+    })
+    </script>
+</body>
+</html>

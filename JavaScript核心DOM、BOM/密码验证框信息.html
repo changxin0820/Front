@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    .message {
+        display: inline-block;
+        color: grey;
+    }
+
+    .messageright {
+        display: inline-block;
+        color: green;
+    }
+
+    .messagewrong {
+        display: inline-block;
+        color: red;
+    }
+</style>
+
+<body>
+    <div class="register">
+        <input type="password" class="ipt">
+        <p class="message">请输入6-16位密码</p>
+
+
+    </div>
+    <script>
+        //1.获取元素
+        var ipt = document.querySelector('.ipt');
+        var msg = document.querySelector('.message');
+        ipt.onblur = function () {
+            if (this.value.length < 6 || this.value.length > 16) {
+                msg.className = 'messagewrong';
+                msg.innerHTML = '请输入正确格式';
+            } else {
+                msg.className = 'messageright';
+                msg.innerHTML = '格式正确';
+            }
+        }
+
+    </script>
+</body>
+
+</html>

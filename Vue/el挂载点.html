@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="app" class="app">
+        {{ message }}
+        <h2>{{ school.name}} </h2>
+        <h3>{{ school.address}}</h3>
+        <ul>
+           
+                <h5>{{campus[0] }}</h5>
+                {{campus[1]}}
+            
+        </ul>
+        
+    </div>
+     <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    var app = new Vue({
+//el:"#app",//id 选择器为#，class选择器为.
+        //el:".app",
+        el:"div",
+        data:{
+            message:"data讲解！!",
+            school:{
+                name:"武汉大学",
+                address:"武汉"
+            },
+            campus:["信息学部","文理学部","工学部"]
+        }
+    })
+</script>
+</body>
+</html>

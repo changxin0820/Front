@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<style>
+    div {
+        width: 400px;
+        height: 100px;
+        margin: 20px auto;
+        background-color: darkturquoise;
+    }
+
+    button {
+        display: block;
+        width: 150px;
+        height: 40px;
+        background-color: burlywood;
+        margin: 0 auto;
+    }
+</style>
+
+<body>
+
+    <div>点击按钮才显示</div>
+    <button>显示当前时间哦！</button>
+    <script>
+        var btn = document.querySelector('button');
+        var div = document.querySelector('div');
+        btn.onclick = function () {
+            div.innerText = new Date();
+        }
+
+    </script>
+</body>
+
+</html>

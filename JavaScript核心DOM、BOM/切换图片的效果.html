@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    #img {
+        width: 720px;
+        height: 540px;
+        background-color: orchid;
+        margin: 0 auto;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+
+    #one,
+    #two,
+    #three {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        background-color: orange;
+        border-radius: 7px;
+
+    }
+
+    #one:hover,
+    #two:hover,
+    #three:hover {
+        background-color: orangered;
+    }
+
+    #next {
+        text-align: center;
+    }
+</style>
+
+<body>
+    <div id="img">
+        <img src="../img/2.jpg" alt="">
+    </div>
+    <div id="next">
+        <span id="one"></span>
+        <span id="two"></span>
+        <span id="three"></span>
+    </div>
+    <script>
+        var one = document.getElementById('one');
+        var two = document.getElementById('two');
+        var three = document.getElementById('three');
+        var img = document.querySelector('img');
+        one.onmouseover = function () {
+            img.src = '../img/3.jpg'
+        }
+        two.onmouseover = function () {
+            img.src = '../img/4.jpg'
+        }
+        three.onmouseover = function () {
+            img.src = '../img/5.jpg'
+        }
+    </script>
+</body>
+
+</html>

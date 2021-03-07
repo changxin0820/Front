@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script>
+
+    function countTime(time) {
+        var now = +new Date();
+
+        var inputTime = +new Date(time);
+        console.log(inputTime);
+
+        var time1 = inputTime - now;
+        d = parseInt(time1 / 1000 / 60 / 60 / 24);
+        h = parseInt(time1 / 1000 / 60 / 60 % 24);
+        m = parseInt(time1 / 1000 / 60 % 60)
+        s = parseInt(time1 / 1000 % 60);
+
+        return d + '天' + h + '时' + m + '分' + s + '秒';
+
+
+
+    }
+    console.log(countTime('2021-3-4 19:00:00'));
+    var time2 = new Date();
+    console.log(time2);
+    var input = prompt('请输入日期:');
+
+    while (true) {
+        //alert('倒计时剩余：' + countTime(input));
+
+        console.log('倒计时剩余：' + countTime(input));
+
+    }
+
+</script>
+
+<body>
+
+</body>
+
+</html>

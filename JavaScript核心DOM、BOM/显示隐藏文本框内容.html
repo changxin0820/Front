@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    input {
+        color: gray;
+    }
+</style>
+
+<body>
+    <input type="text" value="手机">
+    <script>
+        //1.获取元素
+        var text = document.querySelector('input');
+        //2.注册事件得到焦点
+        text.onfocus = function () {
+            if (this.value == '手机') {
+                this.value = '';
+
+            }
+            //需要把文本颜色变黑
+            this.style.color = '#333';
+        }
+        //3。2.注册事件失去焦点
+        text.onblur = function () {
+            if (this.value == '') {
+                this.value = '手机';
+            }
+            this.style.color = '#999 '
+        }
+    </script>
+</body>
+
+</html>

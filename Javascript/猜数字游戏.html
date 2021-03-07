@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>猜数字游戏</title>
+    <script>
+        function getRandom(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min; //含最大值，含最小值 
+        }
+        var num = getRandom(1, 20);
+        var nn = 0;
+        while (true) {
+
+            console.log(nn);
+            var input = prompt('来猜数字！请输入一个数');
+            if (input < num && nn < 5) {
+                nn++;
+                console.log(nn);
+                alert('猜小了哦！');
+
+            } else if (input > num && nn < 5) {
+                nn++;
+                console.log(nn);
+                alert('猜大了哦！');
+
+            } else if (input == num && nn < 5) {
+                alert('猜对啦！你今天有好运！')
+                break;
+            } else if (nn >= 5) {
+                alert('今天运气不太好！');
+                break;
+            }
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

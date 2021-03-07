@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    .box {
+        position: relative;
+        width: 400px;
+        border-bottom: 1px solid orange;
+        margin: 0 auto;
+
+    }
+
+    label {
+        width: 24px;
+        height: 20px;
+        background-color: white;
+        position: absolute;
+        top: 10px;
+        right: 0px;
+        font-size: 100%;
+
+    }
+
+    .box input {
+
+        width: 370px;
+        height: 30px;
+        border: 0;
+        outline: none;
+    }
+</style>
+
+<body>
+    <div class="box">
+        <input type="password" name="" id="">
+        <label for="">❎</label>
+
+    </div>
+
+    <script>
+        var l1 = document.querySelector('label');
+        var i1 = document.querySelector('input');
+        var flag = false;
+        l1.onclick = function () {
+            if (!flag) {
+                l1.innerText = '✅'
+                i1.type = 'text';
+                flag = !flag;
+            } else {
+                l1.innerText = '❎'
+                i1.type = 'password';
+                flag = !flag;
+            }
+
+        }
+    </script>
+</body>
+
+</html>

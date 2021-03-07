@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    ol li a {
+        color: lawngreen;
+    }
+
+    div>a {
+        color: magenta;
+    }
+
+
+
+    a.a11:link {
+        color: yellowgreen;
+        text-decoration: none;
+    }
+
+    a.a11:visited {
+        color: red;
+    }
+
+    a.a11:hover {
+        color: blue;
+    }
+
+
+
+
+    a.a11:active {
+        color: pink;
+    }
+</style>
+
+<body>
+    <ol>
+        <li>子代</li>
+        <li><a href="#">子代2</li>
+    </ol>
+    <div>
+        <a href="#">我是亲儿子</a>
+        <div>
+            <p><a href="#">我是亲孙子</a></p>
+        </div>
+
+    </div>
+    <div class="div3">
+        <ul><a href="#">儿子1</a></ul>
+
+        <ul><a href="#">儿子2</a></ul>
+        <ul><a href="#">儿子3</a></ul>
+    </div>
+
+    <a href="#">百度</a>
+    <a href="#">百度new</a>
+    <a href="#">腾讯</a>
+    <a href="#">华为</a>
+    <a href="#" class="a11">新网站</a>
+</body>
+
+</html>

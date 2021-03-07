@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<style>
+    table td {
+
+        padding: 10px 30px;
+
+        border-bottom: 1px solid #999;
+
+        border-right: 1px solid #999;
+
+    }
+
+    table {
+
+
+        border-top: 1px solid #999;
+
+        border-left: 1px solid #999;
+
+        border-spacing: 0;
+        /*去掉单元格间隙*/
+    }
+</style>
+
+<body>
+
+    <table>
+        <thead>
+            <td> <input type="checkbox" class="checkall"></td>
+            <td>商品名称</td>
+            <td>价格</td>
+        </thead>
+        <tbody id="tbx">
+            <tr>
+                <td> <input type="checkbox"></td>
+                <td>mi12</td>
+                <td>1999</td>
+            </tr>
+            <tr>
+                <td> <input type="checkbox"></td>
+                <td>iphone</td>
+                <td>10999</td>
+            </tr>
+        </tbody>
+
+
+    </table>
+    <script>
+        var checkall = document.querySelector('.checkall');
+        var checks = document.getElementById('tbx').getElementsByTagName('input');
+
+        checkall.onclick = function () {
+            for (var i = 0; i < checks.length; i++) {
+                console.log(this.checked);
+
+                checks[i].checked = this.checked;
+            }
+        }
+        for (var i = 0; i < checks.length; i++) {
+            checks[i].onclick = function () {
+                var flag = true;
+
+
+                for (var i = 0; i < checks.length; i++) {
+                    if (!checks[i].checked) {
+                        flag = false;
+                    }
+                }
+                checkall.checked = flag;
+            }
+        }
+    </script>
+</body>
+
+</html>

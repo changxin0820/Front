@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<script>
+
+    var arr = [5, 0, 6, 8, 9, 3, 2, 1];
+    for (var j = 0; j < arr.length - 1; j++) {
+        for (var i = 0; i < arr.length - 1; i++) {
+            if (arr[i] > arr[i + 1]) {
+                temp = arr[i];
+                arr[i] = arr[i + 1];
+                arr[i + 1] = temp;
+            }
+            else {
+
+            }
+        }
+    }
+    console.log(arr);
+    var arr1 = [5, 0, 6, 8, 9, 3, 2, 1];
+    function Quicksort(arr, low, high) {
+
+        s = low; t = high; i = s; j = t;
+        tmp = arr[s];
+        while (low < high) {
+
+            while (i != j)  		//两端交替向中间扫描，直至i=j为止
+            {
+                while (j > i && arr[j].key >= tmp.key) j--;
+                arr[i] = arr[j];
+                while (i < j && arr[i].key <= tmp.key) i++;
+                arr[j] = arr[i];
+            }
+            R[i] = tmp;
+            QuickSort(arr, s, i - 1); 	//对左区间递归排序
+            QuickSort(arr, i + 1, t); 	//对右区间递归排序
+
+        }
+    }
+    Quicksort(arr1, 0, arr1.length);
+    console.log(arr1);
+
+
+</script>
+
+
+<body>
+
+</body>
+
+</html>

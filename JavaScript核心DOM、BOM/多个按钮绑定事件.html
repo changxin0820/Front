@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>1</button>
+    <button>2</button>
+    <button>3</button>
+    <button>4</button>
+    <button>5</button>
+    <script>
+        //获取所有按钮
+        var btns = document.getElementsByTagName('button');
+        //得到的btns为伪数组，btns[i]
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].onclick = function () {
+                //先把所有背景颜色去掉
+                for (var i = 0; i < btns.length; i++) {
+                    //
+                    btns[i].style.backgroundColor = '';
+                }
+                //再改所点击的颜色
+                this.style.backgroundColor = '#ff0';
+            }
+
+        }
+    </script>
+</body>
+
+</html>
