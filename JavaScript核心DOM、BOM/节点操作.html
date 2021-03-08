@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    ol,
+    li,
+    ul {
+        list-style-type: none;
+    }
+</style>
+
+<body>
+    <ol>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <ul>1</ul>
+        <ul>2</ul>
+        <ul>3</ul>
+    </ol>
+    <script>
+        var ol = document.querySelector('ol');
+        console.log(ol.children);
+        console.log(ol.children[ol.children.length - 1]);
+
+
+
+    </script>
+</body>
+
+</html>

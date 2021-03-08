@@ -81,5 +81,31 @@
 
         </div>
     </div>
+    <script>
+        //1.上面模块
+
+        var lis = document.querySelectorAll('li');
+        var items = document.querySelectorAll('.item');
+        for (var i = 0; i < lis.length; i++) {
+            lis[i].setAttribute('index', i);
+            lis[i].onclick = function () {
+                for (var i = 0; i < lis.length; i++) {
+                    lis[i].className = '';
+                }
+                this.className = 'current';
+                var index = this.getAttribute('index');
+                // console.log(index);
+                //2.下面模块
+                for (var i = 0; i < items.length; i++) {
+                    items[i].style.display = '';
+                }
+                items[index].style.display = 'block';
+            }
+        }
+
+
+    </script>
+
+</body>
 
 </html>
