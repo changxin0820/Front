@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    textarea {
+        text-decoration: none;
+        resize: none;
+    }
+
+    li {
+        display: inline-block;
+        list-style-type: none;
+        width: 100%;
+    }
+
+    li a {
+        color: black;
+        text-decoration: none;
+        float: right;
+    }
+
+    div {
+        width: 500px;
+        height: 300px;
+        border: 1px solid black;
+
+    }
+
+    span {
+
+        margin: 200px;
+    }
+</style>
+
+<body>
+    <textarea rows="10" cols="30"></textarea>
+    <button>发布</button>
+    <div><span>评论</span></div>
+</body>
+<script>
+    var text = document.querySelector('textarea');
+    var btn = document.querySelector('button');
+    var div = document.querySelector('div');
+    btn.onclick = function () {
+        var li = document.createElement('li');
+
+
+
+        li.innerHTML = text.value + "<a href=javascript:;> 删除</a>";
+        // div.appendChild(li);
+
+        div.insertBefore(li, div.children[1]);
+
+        text.value = '';
+
+        var as = document.querySelectorAll('a');
+        for (var i = 0; i < as.length; i++) {
+            as[i].onclick = function () {
+                //删除的是当前a所在的li this.parentNode
+                div.removeChild(this.parentNode);
+            }
+        }
+
+    }
+
+</script>
+
+</html>
