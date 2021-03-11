@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    table {
+
+        font-size: 20px;
+        width: 300px;
+        margin: 0 auto;
+        border-top: 1px solid #999;
+        border-left: 1px solid #999;
+
+    }
+
+    thead tr {
+        background-color: lightblue;
+    }
+
+    table td,
+    table th {
+
+        border-right: 1px solid #999;
+        border-bottom: 1px solid #999;
+    }
+</style>
+
+<body>
+    <table cellspacing="0">
+        <thead>
+            <tr>
+                <th>name</th>
+                <th>age</th>
+                <th>address</th>
+                <th>delete</th>
+            </tr>
+
+        </thead>
+        <tbody>
+
+
+        </tbody>
+
+    </table>
+    <script>
+        //1、生成数据
+        var datas = [
+            {
+                name: '魏昌鑫',
+                age: 21,
+                address: '四川'
+            }, {
+                name: '魏昌鑫2',
+                age: 22,
+                address: '北京'
+            },
+            {
+                name: '魏昌鑫3',
+                age: 21,
+                address: '深圳'
+            }, {
+                name: '魏昌鑫4',
+                age: 20,
+                address: '上海'
+            }
+        ];
+        //2、往tbody里面创建行
+        var tbd = document.querySelector('tbody');
+        for (var i = 0; i < datas.length; i++) {
+            var tr = document.createElement('tr');
+            tbd.appendChild(tr);
+
+
+            for (var k in datas[i]) {
+                //创建单元格
+                var td = document.createElement('td');
+                //把对象里面的属性值datas[i][k]给td
+                td.innerHTML = datas[i][k];
+                tr.appendChild(td);
+
+            }
+            var del = document.createElement('td');
+            del.innerHTML = '<a href="javascript:;">删除</a>';
+            tr.appendChild(del);
+        }
+        //删除操作实现
+
+
+        var dels = document.querySelectorAll('a');
+        for (var i = 0; i < dels.length; i++) {
+            dels[i].onclick = function () {
+                //点击删除所在行
+                tbd.removeChild(this.parentNode.parentNode);
+            }
+        }
+
+
+        // for(var k in obj){
+        //     k得到的是属性名
+        //     obj[k]得到的是属性值
+        // }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<style>
+    img {
+        position: absolute;
+
+    }
+</style>
+
+<body>
+
+    <img src="../img/eat.jpg" alt="">
+
+
+</body>
+<script>
+    var img = document.querySelector('img');
+    document.addEventListener('mousemove', function (e) {
+        var x = e.pageX;
+        var y = e.pageY;
+        img.style.top = y - 20 + 'px';
+        img.style.left = x - 20 + 'px';
+
+    })
+</script>
+
+</html>

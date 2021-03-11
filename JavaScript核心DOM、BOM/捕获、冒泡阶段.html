@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<style>
+    .father {
+        margin: 100px auto;
+        position: relative;
+        width: 400px;
+        height: 400px;
+
+        background-color: lightcyan;
+    }
+
+    .son {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: 200px;
+        height: 200px;
+        /* margin: 200px auto; */
+        background-color: lightblue;
+    }
+
+    .shijian {
+        width: 100px;
+        height: 100px;
+        background-color: lightgreen;
+    }
+</style>
+
+<body>
+    <div class="father">
+
+        <div class="son"></div>
+    </div>
+    <div class="shijian"></div>
+</body>
+<script>
+    var divs = document.querySelectorAll('div');
+    divs[0].addEventListener('click', function () {
+        alert("我是爸爸");
+    }, true);
+    divs[1].addEventListener('click', function () {
+        alert("我是儿子");
+    }, true);
+    var divshi = document.querySelector('.shijian');
+    divshi.addEventListener('mouseover', function (e) {
+        console.log(e.target);
+
+    })
+
+</script>
+
+</html>
