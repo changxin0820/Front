@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function ajax_post(url, data) {
+            //1.新建
+            var ajax = new XMLHttpRequest();
+            //2.url方法
+            ajax.open('post', url);
+            //3.设置报文
+            ajax.setRequestHeader('String', 'hhhhh');
+            //4.发送
+            if (data) {
+                ajax.send(data);
+            } else {
+                ajax.send();
+            }
+            //5.注册事件
+            ajax.onreadystatechange = function () {
+                if (ajax.readyState == 4 && ajax.readyState == 200) {
+                    console.log(ajax.repenseText);
+
+                }
+            }
+
+
+        }
+
+    </script>
+</body>
+
+</html>
