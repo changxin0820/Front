@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        var maxSlidingWindow = function (nums, k) {
+            if (nums.length == 1) {
+                return nums[0];
+            }
+            var maxnums = [];
+            var maxnum;
+
+            for (let i = 0; i < nums.length - k + 1; i++) {
+                maxnum = nums[i];
+                console.log(maxnum);
+                for (let j = i; j < i + k; j++) {
+
+                    if (nums[j] > maxnum) {
+                        maxnum = nums[j];
+
+                    }
+
+                }
+                maxnums.push(maxnum);
+
+
+            }
+            return maxnums;
+        };
+        nums = [1, 3, -1, -3, 5, 3, 6, 7];
+        console.log(maxSlidingWindow(nums, 3));
+
+    </script>
+</body>
+
+</html>

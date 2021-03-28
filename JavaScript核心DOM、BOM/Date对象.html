@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var s = 1000;
+        var minute = 60 * s;
+        var hour = 60 * minute;
+        //获取当前时间
+        var nowtime = new Date();
+        console.log(nowtime);
+        //获取时间毫秒数
+        console.log(nowtime.getTime());
+        var str = "2021/3/23 00:00:00";
+        var newTime = new Date(str);
+        var diffTime = newTime - nowtime
+        var difhour = parseInt(diffTime / hour);
+        var difminute = parseInt(diffTime % hour / minute);
+        var difs = parseInt(diffTime % hour % minute / s);
+        console.log("倒计时：" + difhour + "时" + difminute + "分" + difs + "秒");
+
+    </script>
+</body>
+
+</html>

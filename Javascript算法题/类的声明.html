@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        class Phone {
+
+            constructor(name, number) {
+                this.name = name;
+                this.number = number;
+            }
+
+        }
+        class Xiaomi extends Phone {
+            constructor(name, number) {
+                super(name, number);
+            }
+
+
+        }
+
+
+        var phone = new Phone();
+        console.log(phone.name);
+        console.log(phone.number);
+
+        var xiaomi = new Xiaomi();
+        console.log(xiaomi.name);
+        console.log(xiaomi.number);
+
+        function get() {
+            var name = "sss"
+            console.log(name);
+            if (true) {
+                var num = 1;
+            }
+            console.log(num);
+
+        }
+        var person = {
+            "name": "wowoow",
+            number: 123
+
+        }
+        get();
+
+        console.log(person.name);
+        var names = ["red", "blue", "yellow", "brown", "green"];
+
+        console.log(names.splice(2, 3));
+        console.log(names);
+
+
+
+
+    </script>
+</body>
+
+</html>

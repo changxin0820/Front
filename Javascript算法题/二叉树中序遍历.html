@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function treeNode(val, left, right) {
+
+            this.val == 0 ? undefined : val;
+            this.left == undefined ? null : left;
+            this.right == undefined ? null : right;
+
+        }
+        var left = new treeNode(2, 3, 4);
+        var right = new treeNode(5, 6, 7);
+        var tree = new treeNode(2, left, right);
+        var root = [1, 2, 3, 4, 5];
+        function order(root) {
+            var res = [];
+            midorder(root, res);
+            return res;
+        }
+        function midorder(root, res) {
+            if (root == null) {
+                return 0;
+            }
+            midorder(root.left, res);
+            res.push(root.val);
+            midorder(root.right, res);
+
+        }
+        console.log(tree);
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    div {
+        background-color: black;
+        width: 40px;
+        height: 40px;
+        display: inline-block;
+        color: blanchedalmond;
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .all {
+        display: flex;
+        margin-top: 300px;
+        margin-left: 30%;
+        width: 800px;
+    }
+
+    .part {
+        margin: auto;
+        width: 400px;
+    }
+</style>
+
+<body>
+    <div class="all">
+        <div class="part">
+            <div class="day">0
+            </div>
+            <div>天</div>
+            <div class="hour">1</div>
+            <div>时</div>
+            <div class="minute">2</div>
+            <div>分</div>
+            <div class="second">3</div>
+            <div>秒</div>
+        </div>
+
+    </div>
+
+
+    <script>
+        var d = document.querySelector(".day");
+        var h = document.querySelector(".hour");
+        var m = document.querySelector(".minute");
+        var s = document.querySelector(".second");
+        time = "2021/4/3 19:30:00";
+        var inputTime = new Date(time);
+        setInterval(countDown, 1000);
+        function countDown() {
+
+            var nowtime = new Date();
+
+            var diffTime = (inputTime - nowtime) / 1000;
+            var diffd = parseInt(diffTime / 60 / 60 / 24);
+            d.innerHTML = diffd;
+            var difhour = parseInt(diffTime / 60 / 60 % 24);
+            difhour = difhour < 10 ? "0" + difhour : h;
+            h.innerHTML = difhour;
+            var difminute = parseInt(diffTime / 60 % 60);
+            difminute = difminute < 10 ? "0" + difminute : difminute;
+            m.innerHTML = difminute;
+            var difs = parseInt(diffTime % 60);
+            s.innerHTML = difs;
+
+
+
+        }
+
+
+    </script>
+</body>
+
+</html>

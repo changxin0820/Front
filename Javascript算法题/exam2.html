@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+
+        function count(s) {
+            if (s.indexOf("*") != -1 || s.indexOf("/") != -1) {
+                s = countMulDiv(s);
+                if (s.indexOf("+" != -1 || s.indexOf("-") != -1)) {
+                    return countAddMin(s);
+                }
+            } else if (s.indexOf("+") != -1 || s.indexOf("-") != -1) {
+                return countAddMin(s);
+            }
+
+        }
+        function countMulDiv(s) {
+            if (s.indexOf("/") != -1 || s.indexOf("*") != -1) {
+                s = countDivision(s);
+                if (s.indexOf("/") != -1 || s.indexOf("*") != -1) {
+                    return countMulDiv(s);
+                } else {
+                    return s;
+                }
+            }
+        }
+        function countAddMin(s) {
+            if (s.indexOf("+") != -1 || s.indexOf("-") != -1) {
+                s = countAdd(s);
+
+                if (s.indexOf("+") != -1 || s.indexOf("-") != -1) {
+                    return countAddMin(s);
+                } else {
+                    return s;
+                }
+            }
+        }
+        function countDivision(s) {
+            if (!s) {
+                return "";
+            }
+            var ss = /(\d+(?:\.\d+)?)([*/])(\d+(?:\.\d+)?)/;
+            return s.replace(ss, function (matchStr) {
+                return eval(matchStr);
+            });
+
+        }
+        function countAdd(s) {
+            if (!s) {
+                return "";
+            }
+            var ss = /(\d+(?:\.\d+)?)([+-])(\d+(?:\.\d+)?)/;
+            return s.replace(ss, function (matchStr) {
+                return eval(matchStr);
+            });
+        }
+        s = "3*3*4\2";
+        console.log(count(s));
+
+    </script>
+</body>
+
+</html>

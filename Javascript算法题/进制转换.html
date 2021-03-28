@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        //1.十进制转二进制：toString
+        // var num = 10
+        // console.log(num.toString(2))
+        //2.二进制转十进制：parseInt
+        //console.log(parseInt("11",2))
+        function change(n) {
+
+            var nums = [];
+            var u;
+            while (n >= 2) {
+                u = n % 2;
+                nums.push(u);
+                n = parseInt(n / 2);
+            }
+            nums.push(n);
+            nums.reverse();
+            var s = '';
+            for (let i = 0; i < nums.length; i++) {
+                //console.log(nums[i]);
+                s += nums[i];
+            }
+            console.log(s);
+
+
+
+        }
+        change(2020);
+        var num = 10
+        console.log(num.toString(2))
+    </script>
+</body>
+
+</html>

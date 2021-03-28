@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var root = 1;
+        var ss = [];
+        ss.push(root);
+        ss.push(root);
+        console.log(ss);
+        var res = [];
+        res.push(ss);
+        res.push(ss);
+        console.log(res);
+
+        var ss = [];
+        console.log(ss);
+        var mm = [];
+        function ssm(mm) {
+            var ss = [];
+            ss.push(1);
+            mm.push(ss.shift());
+
+            ss.push(1);
+            mm.push(ss);
+            return mm;
+        }
+        console.log(ssm(mm));
+        console.log(ssm(mm));
+
+
+    </script>
+</body>
+
+</html>

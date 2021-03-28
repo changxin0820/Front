@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+
+        function changeNum(s) {
+            var numChar = {
+                零: 0,
+                一: 1,
+                二: 2,
+                三: 3,
+                四: 4,
+                五: 5,
+                六: 6,
+                七: 7,
+                八: 8,
+                九: 9
+            };
+            var nameValue = {
+                万: { value: 10000, tag: true },
+                千: { value: 1000, tag: false },
+                百: { value: 100, tag: false },
+                十: { value: 10, tag: false }
+
+            };
+            var r = 0;
+            var part = 0;
+            var number = 0;
+            var tag = false;
+            var str = s.split("");
+            for (let i = 0; i < str.length; i++) {
+                var num = numChar[str[i]];
+                if (typeof num != "undefined") {
+                    number = num;
+                    if (i == str.length - 1) {
+                        part += number;
+                    }
+                } else {
+                    var unit = nameValue[str[i]].value;
+                    tag = nameValue[str[i]].tag;
+                    if (tag) {
+                        part = (part + number) * unit;
+                        r += part;
+                        part = 0;
+                    } else {
+                        part += (number * unit);
+                    }
+                    number = 0;
+                }
+            }
+            return r + part;
+
+        }
+
+        s = "一千一百八十一万三千七百一十";
+        console.log(changeNum(s));
+
+
+
+
+    </script>
+</body>
+
+</html>

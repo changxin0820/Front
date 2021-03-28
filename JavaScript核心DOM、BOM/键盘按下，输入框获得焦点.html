@@ -9,12 +9,15 @@
 </head>
 
 <body>
+    <input type="text" name="" id="">
     <script>
+        input = document.querySelector("input");
+        document.addEventListener("keyup", function (e) {
+            if (e.keyCode == 65) {
+                input.focus();
 
-        console.log(typeof (null));
-        var s = new String('ssss');
-        s = 'ssss'
-        console.log(Object.prototype.toString.call(s));
+            }
+        })
 
     </script>
 </body>
