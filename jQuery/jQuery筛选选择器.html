@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+
+<body>
+    <ol>
+        <li>small li</li>
+        <li>small li</li>
+        <li>small li</li>
+        <li>small li</li>
+        <li>small li</li>
+    </ol>
+    <script>
+        //筛选器
+        //:first第一个
+        //:last最后一个
+        //:eq(index)索引号
+        //:odd(奇数)
+        //:even(偶数)
+        $('ol li').css('width', '300px');
+        $('ol li:odd').css('background', 'blue');
+        $('ol li:eq(2)').css('background', 'red');
+    </script>
+</body>
+
+</html>

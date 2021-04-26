@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="gdfather">爷爷
+        <p>亲儿子</p>
+        <div class="father">父亲
+            <p>孙儿子</p>
+        </div>
+    </div>
+    <div>爷爷兄弟</div>
+    <div>爷爷兄弟</div>
+    <div>爷爷兄弟</div>
+
+    <script>
+        //只找最近一级的儿子
+        $('.gdfather').children('p').css('background', 'blue');
+        // 找到所有儿子
+        $('.gdfather').find('p').css('background', 'red');
+        //兄弟节点,除了自己
+        $('.gdfather').siblings('div').css('background', 'pink');
+        //查找所有后代同辈
+        $('.gdfather').nextAll('div').css('background', 'green');
+    </script>
+</body>
+
+</html>

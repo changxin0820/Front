@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jsonp跨域</title>
+</head>
+<style>
+    input {
+        width: 200px;
+        height: 30px;
+        border: 1px red solid;
+    }
+</style>
+
+<body>
+    用户名：<input type="text" id="username">
+    <p></p>
+</body>
+<script>
+    const input = document.querySelector("#username");
+    const p = document.querySelector("p");
+    var handle = (data) => {
+        input.style.border = "1px blue solid";
+        p.innerHTML = data.msg;
+
+
+    }
+    input.onblur = function () {
+        let username = this.value;
+        const script = document.createElement('script');
+        script.src = 'http://127.0.0.1:8000/check-server';
+        document.body.appendChild(script);
+    }
+</script>
+<!-- <script src="http://127.0.0.1:8000/jsonp-server"></script> -->
+
+</html>

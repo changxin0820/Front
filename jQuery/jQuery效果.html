@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+<style>
+    div {
+        width: 200px;
+        height: 400px;
+        background-color: blue;
+    }
+</style>
+
+<body>
+    <button>显示</button>
+    <button>隐藏</button>
+    <button>切换</button>
+    <div></div>
+    <script>
+        //动画效果show([speed],[easing],[fn])
+        //speed速度，('slow',normal,fast)Or 时长毫秒数(如1000)
+        //easing:(Optional)指定切换效果，默认为swing，可用参数linear
+        //fn()回调函数，动画完成时执行的动作，每个元素执行一次
+        $(function () {
+            // $('button').eq(1).click(function () {
+            //     $('div').hide(1000, function () {
+            //         alert('隐藏了')
+            //     });
+            // })
+            // $('button').eq(0).click(function () {
+            //     $('div').show(2000, "linear", function () {
+            //         alert('显示了');
+            //     })
+            // })
+            // $('button').eq(2).click(function () {
+            //     $('div').toggle(2000, "swing")
+            // })
+            //下滑动slideDown
+            $('button').eq(0).mouseover(function () {
+                $("div").slideDown(1000);
+            })
+            $('button').eq(1).mouseover(function () {
+                $("div").slideUp(1000);
+            })
+            $('button').eq(2).mouseover(function () {
+                $("div").slideToggle(1000);
+            })
+
+        })
+    </script>
+</body>
+
+</html>

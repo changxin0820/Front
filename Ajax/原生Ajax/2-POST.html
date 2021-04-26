@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax中POST请求</title>
+</head>
+<style>
+    #result {
+        width: 400px;
+        height: 300px;
+        border: medium blue solid;
+    }
+</style>
+
+<body>
+    <div id="result"></div>
+</body>
+<script>
+    const result = document.querySelector('#result');
+    result.addEventListener('mouseover', function () {
+        //1.创建对象
+        const xhr = new XMLHttpRequest();
+        //2.初始化，设置类型与url
+        xhr.open('POST', 'http://127.0.0.1:8000/server');
+        //设置请求头
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
+        xhr.setRequestHeader('username', 'wcx')
+
+        //3.发送
+        xhr.send("a=100&b=300&c=382918");
+        //4.事件绑定
+        xhr.onreadystatechange = function () {
+            //判断
+            if (xhr.readyState === 4) {
+                if (xhr.status >= 200 & xhr.status < 300) {
+                    //处理服务器返回结果
+                    result.innerHTML = xhr.response;
+                }
+            }
+        }
+    })
+</script>
+
+</html>

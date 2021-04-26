@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<style>
+    div {
+        width: 200px;
+        height: 200px;
+        background-color: red;
+    }
+</style>
+
+<body>
+    <div></div>
+    <script>
+        // // $('div').hide();
+        // 1.页面加载完毕再执行js代码
+        // $('div').ready(function(){
+        //     $('div').hide();
+        // // })
+        // 2. 1.页面加载完毕再执行js代码
+        // $(function(){
+        //     $('div').hide();
+        // })
+        $('div');//jQuery对象
+        //jQuery对象转换为DOM对象
+        //根据索引来获取
+        $('div')[0];
+        $('div').get(0);
+    </script>
+</body>
+
+</html>

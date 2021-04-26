@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    div {
+        position: absolute;
+        top: 50px;
+        width: 100px;
+        height: 100px;
+        background-color: cornflowerblue;
+    }
+</style>
+
+<body>
+    <div>
+
+    </div>
+    <button id="start">
+        点击开始动画
+    </button>
+    <button id="stop">
+        STOP
+    </button>
+    <script>
+        //动画函数封装
+        //匀速运动
+        function animate(obj, target) {
+            // var timer = setInterval(function () {
+            clearInterval(div.timer);
+            obj.timer = setInterval(function () {//优化了内存和性能，只添加了一个属性
+                if (obj.offsetLeft >= target) {
+                    obj.style.top = obj.offsetTop + 5 + "px";
+                    if (obj.offsetTop >= target) {
+                        clearInterval(obj.timer);
+                    }
+                }
+                div.style.left = div.offsetLeft + 5 + "px";
+            }, 100);
+        }
+        //停止动画
+        function stop(obj) {
+            clearInterval(obj.timer);
+        }
+        //缓动动画、慢慢停止
+        function animate1(obj, target, callback) {
+            clearInterval(obj.timer);
+            obj.timer = setInterval(function () {
+                if (obj.offsetLeft >= target) {
+                    clearInterval(obj.timer);
+                    if (callback) {
+                        callback();
+                    }
+                }
+                obj.style.left = obj.offsetLeft + Math.ceil((target - obj.offsetLeft) / 10) + "px";
+
+            }, 100);
+        }
+        //动画原理
+        //1.获得元素当前位置
+        //2.当前位置添加移动距离
+        //3.利用定时器不断重复这个动作
+        //4.加一个结束条件
+        //5.此元素必须添加定位
+        var div = document.querySelector("div");
+        // div.style.left=div.offsetLeft+5+"px";
+        var button1 = document.querySelector("#start");
+        var button2 = document.querySelector("#stop");
+        button1.addEventListener('click', function () {
+            animate1(div, 300, function () {
+                div.style.backgroundColor = "pink";
+            });//不断点击会增加速度，解决就是只生成一个定时器
+        })
+        //animate(div, 300);
+        button2.addEventListener('click', function () {
+            stop(div);
+        })
+    </script>
+</body>
+
+</html>

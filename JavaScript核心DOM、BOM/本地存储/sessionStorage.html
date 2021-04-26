@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<!-- 本地存储数据存在浏览器中 -->
+<!-- 生命周期为关闭窗口 -->
+<!-- 同页面下数据可共享 -->
+
+<body>
+    <input type="text">
+    <button class="set">存储数据</button>
+    <button class="get">获取数据</button>
+    <button class="remove">删除数据</button>
+    <button class="del">清空所有数据</button>
+
+    <script>
+        console.log(localStorage.getItem("name"));
+
+        var ipt = document.querySelector("input");
+
+        var btn1 = document.querySelector(".set");
+        var btn2 = document.querySelector(".get");
+        var btn3 = document.querySelector(".remove");
+        var btn4 = document.querySelector(".del")
+        btn1.addEventListener("click", function () {
+            var val = ipt.value;
+            if (val != "") {
+                sessionStorage.setItem("name", val);
+                sessionStorage.setItem("pwd", val);
+
+                alert("存储sessionStorage成功！");
+            } else {
+                alert("请输入再存储！");
+            }
+
+        })
+        btn2.addEventListener("click", function () {
+
+            if (sessionStorage.getItem("name") != null) {
+                alert("获取sessionStorage成功！");
+                alert("sessionStorage为:" + sessionStorage.getItem("name"));
+            }
+
+        })
+        btn3.addEventListener("click", function () {
+            sessionStorage.removeItem("name");
+        })
+        btn4.addEventListener("click", function () {
+            sessionStorage.clear();
+            alert("已清空！");
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>重复请求问题</title>
+</head>
+
+<body>
+    <button>
+        点击发送
+    </button>
+
+</body>
+<script>
+    const btn = document.querySelector('button');
+    let x = null;
+    //标识变量
+    let isSending = false;//是否正在发送AJAX请求
+    btn.onclick = function () {
+
+        //判断标识变量
+        if (isSending)
+            x.abort();
+        x = new XMLHttpRequest();
+        //修改标识值
+        isSending = true;
+        x.open('GET', 'http://127.0.0.1:8000/networkerror');
+        x.send();
+        x.onreadystatechange = () => {
+            //修改标识变量
+            if (x.readyState === 4) {
+
+            }
+        }
+    }
+
+</script>
+
+</html>
